@@ -28,3 +28,4 @@ jobs:
         python -m pip install --upgrade pip
         pip install pyinstaller
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pyinstaller --onefile -w 'esp-firmware-update.py'
