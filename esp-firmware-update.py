@@ -39,7 +39,7 @@ def SendCommand():
         if TSendCommandEvent.is_set():
             TSendCommandEvent.clear()
             command[PORT] = ListOfPorts.get()
-            if command[PORT][:3] == 'COM':
+            if command[PORT][:3] == 'COM' or command[PORT][:8] == '/dev/tty':
                 # s = ter.run(command , text=True , capture_output=True )
                 OutputText.insert('end', ' '.join(str(e) for e in command) + '\n-------------------------------------------------\n')
                 time.sleep(1)
